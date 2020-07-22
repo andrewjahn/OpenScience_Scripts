@@ -4,7 +4,7 @@
 
 #User inputs:
 bids_root_dir=$HOME/Desktop/Flanker
-subj=01
+subj=08
 nthreads=4
 mem=20 #gb
 container=docker #docker or singularity
