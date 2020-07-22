@@ -3,7 +3,7 @@
 #Edits by Andrew Jahn, University of Michigan, 07.22.2020
 
 #User inputs:
-bids_root_dir=$HOME/BIDS_tutorial
+bids_root_dir=$HOME/Desktop/Flanker
 subj=01
 nthreads=4
 mem=20 #gb
@@ -15,8 +15,8 @@ container=docker #docker or singularity
 mem=`echo "${mem//[!0-9]/}"` #remove gb at end
 mem_mb=`echo $(((mem*1000)-5000))` #reduce some memory for buffer space during pre-processing
 
-export TEMPLATEFLOW_HOME=$HOME/.cache/templateflow
-export FS_LICENSE=$HOME/BIDS_tutorial/derivatives/license.txt
+#export TEMPLATEFLOW_HOME=$HOME/.cache/templateflow
+export FS_LICENSE=$HOME/Desktop/Flanker/derivatives/license.txt
 
 #Run fmriprep
 if [ $container == singularity ]; then
@@ -26,7 +26,7 @@ if [ $container == singularity ]; then
     --participant-label $subj \
     --skip-bids-validation \
     --md-only-boilerplate \
-    --fs-license-file $FREESURFER_HOME/license.txt \
+    --fs-license-file $HOME/Desktop/Flanker/derivatives/license.txt \
     --fs-no-reconall \
     --output-spaces MNI152NLin2009cAsym:res-2 \
     --nthreads $nthreads \
@@ -39,7 +39,7 @@ else
     --participant-label $subj \
     --skip-bids-validation \
     --md-only-boilerplate \
-    --fs-license-file $HOME/BIDS_tutorial/derivatives/license.txt \
+    --fs-license-file $HOME/Desktop/Flanker/derivatives/license.txt \
     --fs-no-reconall \
     --output-spaces MNI152NLin2009cAsym:res-2 \
     --nthreads $nthreads \
