@@ -1,6 +1,6 @@
 #!/bin/tcsh
-# For the fMRIPrep tutorial, copy and paste this into the "func" directory of sub-08 in the "derivatives/fmriprep" folder
-# and type: "tcsh doDecon.sh sub-08"
+# For the fMRIPrep tutorial, copy and paste this into the "func" directory of ${subj} in the "derivatives/fmriprep" folder
+# and type: "tcsh doDecon.sh ${subj}"
 
 if ( $#argv > 0 ) then
     set subj = $argv[1]
@@ -17,19 +17,18 @@ endif
     -stim_label 1 congruent                                                  \
     -stim_times 2 stimuli/incongruent.1D 'BLOCK(2,1)'                        \
     -stim_label 2 incongruent                                                \
-    -stim_file 3 sub-08_task-flanker_run-1_desc-confounds_regressors.tsv'[150]' -stim_base 3 -stim_label 3 roll_01   \
-    -stim_file 4 sub-08_task-flanker_run-1_desc-confounds_regressors.tsv'[154]' -stim_base 4 -stim_label 4 pitch_01  \
-    -stim_file 5 sub-08_task-flanker_run-1_desc-confounds_regressors.tsv'[158]' -stim_base 5 -stim_label 5 yaw_01    \
-    -stim_file 6 sub-08_task-flanker_run-1_desc-confounds_regressors.tsv'[162]' -stim_base 6 -stim_label 6 dS_01     \
-    -stim_file 7 sub-08_task-flanker_run-1_desc-confounds_regressors.tsv'[166]' -stim_base 7 -stim_label 7 dL_01     \
-    -stim_file 8 sub-08_task-flanker_run-1_desc-confounds_regressors.tsv'[170]' -stim_base 8 -stim_label 8 dP_01     \
-    -stim_file 9 sub-08_task-flanker_run-2_desc-confounds_regressors.tsv'[150]' -stim_base 9 -stim_label 9 roll_02   \
-    -stim_file 10 sub-08_task-flanker_run-2_desc-confounds_regressors.tsv'[154]' -stim_base 10 -stim_label 10        \
-    pitch_02                                                                 \
-    -stim_file 11 sub-08_task-flanker_run-2_desc-confounds_regressors.tsv'[158]' -stim_base 11 -stim_label 11 yaw_02 \
-    -stim_file 12 sub-08_task-flanker_run-2_desc-confounds_regressors.tsv'[162]' -stim_base 12 -stim_label 12 dS_02  \
-    -stim_file 13 sub-08_task-flanker_run-2_desc-confounds_regressors.tsv'[166]' -stim_base 13 -stim_label 13 dL_02  \
-    -stim_file 14 sub-08_task-flanker_run-2_desc-confounds_regressors.tsv'[170]' -stim_base 14 -stim_label 14 dP_02  \
+    -stim_file 3 trans_x_run1.txt'[0]' -stim_base 3 -stim_label 3 trans_x_01   \
+    -stim_file 4 trans_y_run1.txt'[0]' -stim_base 4 -stim_label 4 trans_y_01  \
+    -stim_file 5 trans_z_run1.txt'[0]' -stim_base 5 -stim_label 5 trans_z_01    \
+    -stim_file 6 rot_x_run1.txt'[0]' -stim_base 6 -stim_label 6 rot_x_01     \
+    -stim_file 7 rot_y_run1.txt'[0]' -stim_base 7 -stim_label 7 rot_y_01     \
+    -stim_file 8 rot_z_run1.txt'[0]' -stim_base 8 -stim_label 8 rot_z_01     \
+    -stim_file 9 trans_x_run2.txt'[0]' -stim_base 9 -stim_label 9 trans_x_02   \
+    -stim_file 10 trans_y_run2.txt'[0]' -stim_base 10 -stim_label 10 trans_y_02    \
+    -stim_file 11 trans_z_run2.txt'[0]' -stim_base 11 -stim_label 11 trans_z_02 \
+    -stim_file 12 rot_x_run2.txt'[0]' -stim_base 12 -stim_label 12 rot_x_02  \
+    -stim_file 13 rot_y_run2.txt'[0]' -stim_base 13 -stim_label 13 rot_y_02  \
+    -stim_file 14 rot_z_run2.txt'[0]' -stim_base 14 -stim_label 14 rot_z_02  \
     -jobs 8                                                                  \
     -gltsym 'SYM: incongruent -congruent'				     \
     -glt_label 1 incongruent-congruent					     \
