@@ -32,7 +32,6 @@ if [ $container == singularity ]; then
     --nthreads $nthreads \
     --stop-on-first-crash \
     --mem_mb $mem_mb \
-    -w $HOME
 else
   fmriprep-docker $bids_root_dir $bids_root_dir/derivatives \
     participant \
@@ -45,5 +44,4 @@ else
     --nthreads $nthreads \
     --stop-on-first-crash \
     --mem_mb $mem_mb \
-    -w $HOME
 fi
