@@ -43,5 +43,5 @@ else
     --output-spaces MNI152NLin2009cAsym:res-2 \
     --nthreads $nthreads \
     --stop-on-first-crash \
-    --mem_mb $mem_mb \
+    --mem_mb $mem_mb
 fi
